@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: typebot-builder-deployment
+  name: typebot-builder-deployment # donest connect to anything (for kubectl)
   labels: 
-    app: typebot
+    app: typebot-builder
 spec:
   replicas: 2
   selector: 
     matchLabels: 
-      app: typebot
+      app: typebot-builder # 
   template: 
     metadata: 
       labels: 
-        app: typebot
+        app: typebot-builder # 
     spec: 
       containers:
       - name: typebot-builder
         image:  baptistearno/typebot-builder:latest
         ports:
-        - containerPort: 80
+        - containerPort: 3000

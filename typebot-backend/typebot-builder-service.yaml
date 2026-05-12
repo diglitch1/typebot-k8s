@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: typebot-builder-service # kubectl get service typebot-service (also DNS hostname inside cluster)
+spec:
+  selector:
+    app: typebot-builder # 
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000 # must match containerPort in Deployment 
