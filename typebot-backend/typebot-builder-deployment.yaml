@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: typebot-builder-deployment
+  labels: 
+    app: typebot
+spec:
+  replicas: 2
+  selector: 
+    matchLabels: 
+      app: typebot
+  template: 
+    metadata: 
+      labels: 
+        app: typebot
+    spec: 
+      containers:
+      - name: typebot-builder
+        image:  baptistearno/typebot-builder:latest
+        ports:
+        - containerPort: 80
