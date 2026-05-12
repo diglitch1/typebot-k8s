@@ -3,19 +3,19 @@ kind: Deployment
 metadata: 
   name: typebot-viewer-deployment
   labels: 
-    app: typebot
+    app: typebot-viewer
 spec:
   replicas: 2
   selector: 
     matchLabels: 
-      app: typebot
+      app: typebot-viewer
   template: 
     metadata: 
       labels: 
-        app: typebot
+        app: typebot-viewer
     spec: 
       containers:
       - name: typebot-viewer
         image: baptistearno/typebot-viewer:latest
         ports:
-        - containerPort: 81
+        - containerPort: 3000
