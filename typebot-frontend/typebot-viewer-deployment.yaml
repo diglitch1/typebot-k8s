@@ -9,7 +9,7 @@ spec:
   selector: 
     matchLabels: 
       app: typebot-viewer
-  template: 
+  template:     
     metadata: 
       labels: 
         app: typebot-viewer
@@ -19,3 +19,8 @@ spec:
         image: baptistearno/typebot-viewer:latest
         ports:
         - containerPort: 3000
+        envFrom: 
+          - configMapRef:
+              name: typebot-config
+          - secretRef: 
+              name: typebot-secret
