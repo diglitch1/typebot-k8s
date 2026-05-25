@@ -17,6 +17,7 @@ spec:
       containers:
       - name: typebot-viewer
         image: baptistearno/typebot-viewer:latest
+        imagePullPolicy: IfNotPresent # temp fix
         ports:
         - containerPort: 3000
         envFrom: 

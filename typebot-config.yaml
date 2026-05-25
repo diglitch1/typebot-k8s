@@ -4,8 +4,8 @@ metadata:
   name: typebot-config
 data: 
   NODE_OPTIONS: "--no-node-snapshot"
-  NEXTAUTH_URL: "http://typebot-builder-service" # builder/backend 
-  NEXT_PUBLIC_VIEWER_URL: "http://typebot-viewer-service" #viewer/frontend 
+  NEXTAUTH_URL: "http://builder.typebot.local" # builder/backend 
+  NEXT_PUBLIC_VIEWER_URL: "http://viewer.typebot.local" #viewer/frontend 
   CUSTOM_OAUTH_USER_ID_PATH: "sid"
 
   CUSTOM_OAUTH_ISSUER: "https://auth.srinohosting.com"

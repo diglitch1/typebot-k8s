@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: typebot-ingress
+spec:
+  ingressClassName: nginx
+  rules: 
+    - host: builder.typebot.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: 
+              service: 
+                name: typebot-builder-service # service name
+                port:
+                  number: 80 # match port that the service exposes 
+    - host: viewer.typebot.local # not localhost, becuase it forces https 
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: 
+              service: 
+                name: typebot-viewer-service
+                port:
+                  number: 80
