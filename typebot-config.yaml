@@ -10,3 +10,5 @@ data:
 
   CUSTOM_OAUTH_ISSUER: "https://auth.srinohosting.com"
   CUSTOM_OAUTH_NAME: "Zitadel"
+
+  REDIS_URL: "redis://redis-service:6379"
