@@ -1,12 +1,13 @@
-## to-do
-- [x] cnpg (postgres) - done!!
-- [x] redis (redis sentinel?)
+# to-do
+- [x] cnpg (postgres)
+- [x] redis
     - implement pvc (even though redis in this case is only being used for cache)
+    - (redis sentinel?)
 - [ ] ingress
 - [ ] helm chart
-- [ ] namespaces 
+- [ ] namespaces
 
-## notes
+# notes
 no more minikube → slow as f**k (because it is made for k8s which has alot of bloat like objects for rnd cloud providors, which are not needed here)
 therefor switched to k3s!
 
