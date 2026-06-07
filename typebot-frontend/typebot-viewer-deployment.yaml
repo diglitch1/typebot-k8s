@@ -17,7 +17,6 @@ spec:
       containers:
       - name: typebot-viewer
         image: baptistearno/typebot-viewer:latest
-        imagePullPolicy: IfNotPresent # temp fix
         ports:
         - containerPort: 3000
         envFrom: 
@@ -25,3 +24,9 @@ spec:
               name: typebot-config
           - secretRef: 
               name: typebot-secret
+        env:
+         - name: DATABASE_URL
+           valueFrom:
+            secretKeyRef:
+              name: postgres-cluster-app
+              key: uri              

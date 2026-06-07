@@ -18,6 +18,16 @@ kubectl apply --server-side -f \
 ```
 
 ```bash
+# add /etc/hosts 
+127.0.0.1        builder.typebot.local viewer.typebot.local
+```
+
+```bash
 # purge secrets from git history
 git filter-repo --path typebot-secret.yaml --invert-paths --force
 ```
+```bash
+kc port-forward typebot-builder-deployment-5955bc65ff-5v29r 8083:3000
+```
+
+[http://builder.typebot.local:8082/signin](http://builder.typebot.local:8082/signin)

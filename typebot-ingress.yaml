@@ -3,7 +3,8 @@ kind: Ingress
 metadata:
   name: typebot-ingress
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
+
   rules: 
     - host: builder.typebot.local
       http:
