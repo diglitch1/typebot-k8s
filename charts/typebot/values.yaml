@@ -1,0 +1,23 @@
+builder: 
+  replicaCount: 1
+
+viewer: 
+  replicaCount: 2 
+
+redis:
+  replicaCount: 1
+  pvc: 
+    storage: 1Gi
+
+postgres:
+  replicaCount: 3 
+  storage: 
+    size: 1Gi
+
+publicUrl:
+  builder: 
+    host: builder.typebot.local
+    port: 8082
+  viewer: 
+    host: viewer.typebot.local
+    port: 8082

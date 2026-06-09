@@ -1,0 +1,4 @@
+releases:
+  - name: typebot
+    namespace: default
+    chart: ./charts/typebot

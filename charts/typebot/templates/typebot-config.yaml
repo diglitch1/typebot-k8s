@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: typebot-config
+data:
+  NODE_OPTIONS: "--no-node-snapshot"
+  NEXTAUTH_URL: "http://{{ .Values.publicUrl.builder.host }}:{{ .Values.publicUrl.builder.port }}" # builder/backend
+  NEXT_PUBLIC_VIEWER_URL: "http://{{ .Values.publicUrl.viewer.host }}:{{ .Values.publicUrl.viewer.port }}" #viewer/frontend
+  CUSTOM_OAUTH_USER_ID_PATH: "sub"
+
+  CUSTOM_OAUTH_ISSUER: "https://typebot-igcsah.eu1.zitadel.cloud"
+  CUSTOM_OAUTH_NAME: "Zitadel"
+
+  REDIS_URL: "redis://redis-service:6379"
+  HOSTNAME: "0.0.0.0"

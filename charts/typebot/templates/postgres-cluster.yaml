@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   name: postgres-cluster
 spec:
-  instances: 3
+  instances: {{ .Values.postgres.replicaCount }}
 
   storage:
-    size: 1Gi
+    size: {{ .Values.postgres.storage.size }}
